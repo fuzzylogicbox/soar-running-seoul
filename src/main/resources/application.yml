@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: soar-running-seoul
+
+  #DB (MySQL)
+  datasource:
+    url: jdbc:mysql://localhost:3306/soar_seoul_db?serverTimezone=Asia/Seoul&characterEncoding=UTF-8&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: 1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  #JPA
+  jpa:
+    hibernate:
+      ddl-auto: update #개발 단계에선 update
+      show-sql: true # 콘솔에 실행 SQL 표시
+      properties:
+        hibernate:
+          format_sql: true #SQL 포멧팅
+
+  thymeleaf:
+    cache: false #개발 중 캐시 비활성화
+
+  # 서버 포트
+  server:
+    port: 8080
