@@ -1,4 +1,4 @@
-package io.github.fuzzylogicbox.soar_seoul_backend;
+package io.github.fuzzylogicbox.soarrunningseoul.domain;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.EntityListeners;
