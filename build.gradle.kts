@@ -37,6 +37,7 @@ dependencies {
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("org.springframework.security:spring-security-test")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+	// 충돌유도 A feature/9-participant-data-model
 }
 
 tasks.withType<Test> {
