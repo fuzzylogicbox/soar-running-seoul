@@ -37,7 +37,6 @@ dependencies {
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("org.springframework.security:spring-security-test")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
-	//충돌유도 B feature/13-question-data-model
 }
 
 tasks.withType<Test> {
