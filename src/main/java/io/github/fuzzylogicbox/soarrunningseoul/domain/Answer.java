@@ -19,7 +19,10 @@ public class Answer extends BaseTimeEntity {
     @Id
     private Integer questionId;
 
-    // 추후 Question 변수 선언 해야함.
+    @OneToOne
+    @MapsId
+    @JoinColumn(name = "question_id")
+    private Question question;
 
     @Column(name = "content", nullable = false, columnDefinition = "TEXT")
     private String content;
