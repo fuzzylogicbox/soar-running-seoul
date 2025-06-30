@@ -39,6 +39,6 @@ public class Question extends BaseTimeEntity {
     @Column(name = "status", nullable = false, length = 20)
     private String status;
 
-//    @OneToOne(mappedBy = "question", cascade = CascadeType.ALL, orphanRemoval = true)
-//    private Answer answer;
+    @OneToOne(mappedBy = "question", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Answer answer;
 }
