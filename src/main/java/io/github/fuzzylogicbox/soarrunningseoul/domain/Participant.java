@@ -37,6 +37,9 @@ public class Participant extends BaseTimeEntity {
     @Column(name = "birth", nullable = false)
     private LocalDate birth;
 
+    @Column(name = "event_date", nullable = false, length = 100)
+    private LocalDate eventDate;
+
     @Column(name = "status", nullable = false, length = 20)
     private String status;
 
