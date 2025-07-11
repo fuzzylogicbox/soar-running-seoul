@@ -1,4 +1,4 @@
-package io.github.fuzzylogicbox.soarrunningseoul.config;
+package io.github.fuzzylogicbox.soarrunningseoul.web.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
