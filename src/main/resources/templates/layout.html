@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" th:fragment="layout">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:fragment="layout(title, body)">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title th:replace="~{::title}">SOAR running x Seoul</title>
+    <title th:replace="${title}">SOAR running x Seoul</title>
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,7 +20,7 @@
 <body>
 <div th:replace="fragments/header :: header"></div>
 <main>
-    <div th:replace="~{::body}"></div>
+    <div th:replace="${body}"></div>
 </main>
 <div th:replace="fragments/footer :: footer"></div>
 
