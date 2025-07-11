@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:fragment="layout">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title th:replace="~{::title}">SOAR running x Seoul</title>
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet">
+
+    <!--Stylesheet-->
+    <link rel="stylesheet" th:href="@{/css/reset.css}" />
+    <link rel="stylesheet" th:href="@{/css/main.css}" />
+</head>
+<body>
+<div th:replace="fragments/header :: header"></div>
+<main>
+    <div th:replace="~{::body}"></div>
+</main>
+<div th:replace="fragments/footer :: footer"></div>
+
+<!-- main JS -->
+<script th:src="@{/js/main.js}"></script>
+</body>
+</html>
