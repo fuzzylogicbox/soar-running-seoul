@@ -90,6 +90,18 @@
 }
 /* ------------------------------------------ */
 
+/* sectionBelt */
+.beltWrapper {
+    margin: 6rem auto;
+    overflow: hidden;
+}
+.beltWrapper > .tapeBelt {
+    width: 500vw;
+    height: 80px;
+    background-image: url('../images/tapeBelt.png');
+    background-repeat: repeat;
+}
+
 /* sectionvideo  */
 .videoWrapper {
     position: relative;
