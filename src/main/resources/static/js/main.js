@@ -3,7 +3,7 @@ window.addEventListener('load', function () {
   const menuBtnElement = document.querySelector('.menuBtn');
   const navWrapperElement = document.querySelector('.navWrapper');
 
-  const headerElement = document.querySelector('header');
+  const headerElement = document.querySelector('header .headerWrapper');
 
   const heroElement = document.querySelector('#sectionHero');
   const heroFilterElement = heroElement?.querySelector('.heroFilter');
@@ -13,14 +13,56 @@ window.addEventListener('load', function () {
 
   // 초기 위치값 설정
   let heroTop = 0;
+  let heroBottom = 0;
   let beltTop = 0;
+
+  let lastScrollY = window.scrollY;
 
   // --- 스크롤 이벤트 ---
   window.addEventListener('scroll', function () {
     const currentScrollY = window.scrollY;
     const windowInnerHeight = window.innerHeight;
 
-    // Hero 필터 효과
+    const delta = currentScrollY - lastScrollY;
+    lastScrollY = currentScrollY;
+
+    // 1. 헤더 인터랙션
+    if (headerElement) {
+      const headerHeight = headerElement.offsetHeight;
+
+      // 상단에서는 항상 표시
+      if (currentScrollY < headerHeight) {
+        headerElement.style.top = '0px';
+        headerElement.classList.remove('hidden');
+      } else {
+        if (delta > 0) {
+          // 아래로 스크롤: 숨김
+          headerElement.style.top = `-${headerHeight}px`;
+          headerElement.classList.add('hidden');
+        } else {
+          // 위로 스크롤: 표시
+          headerElement.style.top = '0px';
+          headerElement.classList.remove('hidden');
+        }
+      }
+
+      // Hero 아래로 내려가면 배경색 추가
+      if(heroElement){
+        heroBottom = heroElement.getBoundingClientRect().bottom + currentScrollY;
+      }
+
+      if (currentScrollY >= heroBottom) {
+        headerElement.style.backgroundColor = 'var(--base)';
+        headerElement.style.borderBottom = '1px solid var(--black)';
+      } else {
+        headerElement.style.backgroundColor = 'transparent';
+        headerElement.style.borderBottom = '1px solid transparent';
+      }
+    } else {
+      console.warn("header 요소 찾을 수 없음.")
+    }
+
+    // 2. Hero 필터 효과
     if (heroElement && heroFilterElement) {
       heroTop = heroElement.getBoundingClientRect().top + currentScrollY;
       const scale = 1 + ((currentScrollY - heroTop) / windowInnerHeight) * 2.3;
@@ -77,9 +119,8 @@ window.addEventListener('load', function () {
         menuBtnElement.style.backgroundImage = "url('../images/btn_close.png')";
       }
 
-      console.log("메뉴 토글 : ", isNavOpen ? "닫힘" : "열림");
     });
   } else {
     console.warn("헤더 요소(menuBtn || navWrapper) 찾을 수 없음.");
   }
-})
+});
