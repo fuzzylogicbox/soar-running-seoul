@@ -32,6 +32,11 @@ body {
     background-color: var(--base);
 }
 
+main {
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
 img,
 svg,
 video,
