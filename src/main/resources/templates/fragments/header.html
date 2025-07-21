@@ -1,3 +1,21 @@
 <header th:fragment="header">
-    <div>header</div>
+    <div class="headerWrapper">
+        <a id="logo" href="/">
+            <img th:src="@{/images/logo.svg}" src="/images/logo.svg" alt="logo">
+        </a>
+        <div class="buttonsWrapper">
+            <div class="applyBtn btn btn-sm">Apply</div>
+            <div class="menuBtn"></div>
+        </div>
+        <div class="navWrapper">
+            <ul class="navMenu">
+                <li><a href="/">HOME</a></li>
+                <li><a href="/about">ABOUT</a></li>
+                <li><a href="/qna">Q&A</a></li>
+            </ul>
+            <div class="navImg">
+                <img th:src="@{/images/hero3.png}" src="/images/hero3.png">
+            </div>
+        </div>
+    </div>
 </header>
