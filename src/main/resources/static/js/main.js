@@ -1,4 +1,27 @@
 window.addEventListener('load', function () {
+
+  // --- lenis 라이브러리 초기화 ---
+  const lenis = new Lenis({
+  duration: 2, // 스크롤 애니메이션 지속 시간 (초)
+  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // 기본 이징 함수
+  direction: 'vertical',
+  gestureDirection: 'vertical',
+  smooth: true,
+  mouseMultiplier: 0.5, // 마우스 휠 스크롤 속도 배율 (원한다면 조정)
+  smoothTouch: false, // 터치 기기에서 부드러움 활성화 여부 (true 시 touchmove 이벤트 방해 가능성)
+  touchMultiplier: 2, // 터치 스크롤 속도 배율 (원한다면 조정)
+  infinite: false,
+  });
+
+  // requestAnimationFrame을 사용하여 Lenis 업데이트 (부드러운 스크롤 핵심)
+  // 브라우저의 애니메이션 프레임마다 Lenis가 스크롤 위치를 계산하고 업데이트하도록 합니다.
+  function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
+  }
+  requestAnimationFrame(raf); // 애니메이션 루프 시작
+
+
   // --- 요소 캐싱 ---
   const menuBtnElement = document.querySelector('.menuBtn');
   const navWrapperElement = document.querySelector('.navWrapper');
@@ -12,19 +35,15 @@ window.addEventListener('load', function () {
   const tapeBeltElement = beltElement?.querySelector('.tapeBelt');
 
   // 초기 위치값 설정
-  let heroTop = 0;
-  let heroBottom = 0;
-  let beltTop = 0;
+  let heroTop = heroElement?.getBoundingClientRect().top + window.scrollY || 0;
+  let heroBottom = heroElement?.getBoundingClientRect().bottom + window.scrollY || 0;
+  let beltTop = beltElement?.getBoundingClientRect().top + window.scrollY || 0;
 
-  let lastScrollY = window.scrollY;
 
   // --- 스크롤 이벤트 ---
-  window.addEventListener('scroll', function () {
-    const currentScrollY = window.scrollY;
+  lenis.on('scroll', (e) => {
+    const currentScrollY = e.scroll;
     const windowInnerHeight = window.innerHeight;
-
-    const delta = currentScrollY - lastScrollY;
-    lastScrollY = currentScrollY;
 
     // 1. 헤더 인터랙션
     if (headerElement) {
@@ -35,7 +54,7 @@ window.addEventListener('load', function () {
         headerElement.style.top = '0px';
         headerElement.classList.remove('hidden');
       } else {
-        if (delta > 0) {
+        if (e.velocity > 0) {
           // 아래로 스크롤: 숨김
           headerElement.style.top = `-${headerHeight}px`;
           headerElement.classList.add('hidden');
@@ -47,10 +66,6 @@ window.addEventListener('load', function () {
       }
 
       // Hero 아래로 내려가면 배경색 추가
-      if(heroElement){
-        heroBottom = heroElement.getBoundingClientRect().bottom + currentScrollY;
-      }
-
       if (currentScrollY >= heroBottom) {
         headerElement.style.backgroundColor = 'var(--base)';
         headerElement.style.borderBottom = '1px solid var(--black)';
@@ -64,9 +79,7 @@ window.addEventListener('load', function () {
 
     // 2. Hero 필터 효과
     if (heroElement && heroFilterElement) {
-      heroTop = heroElement.getBoundingClientRect().top + currentScrollY;
       const scale = 1 + ((currentScrollY - heroTop) / windowInnerHeight) * 2.3;
-
       if (currentScrollY >= heroTop) {
         heroFilterElement.style.transform = `translateY(${currentScrollY - heroTop}px) scale(${scale})`;
 
@@ -86,7 +99,6 @@ window.addEventListener('load', function () {
 
     // 3. Belt 애니메이션
     if (beltElement && tapeBeltElement) {
-      beltTop = beltElement.getBoundingClientRect().top + currentScrollY;
       const startScroll = beltTop - windowInnerHeight;
 
       if (currentScrollY >= startScroll) {
