@@ -6,6 +6,12 @@ export let beltElement = null;
 export let tapeBeltElement = null;
 export let beltTop_initial = 0;
 
+// Index 외 공용 (e.g. about.html 등)
+export let bannerElement = null;
+export let bannerTop_initial = 0;
+export let bannerBottom_initial = 0;
+
+
 // Index 페이지 전용
 export let heroElement = null;
 export let heroFilterElement = null;
@@ -17,13 +23,7 @@ export let scratchCanvasElement = null;
 export let scratchFilterElement = null;
 export let scratchCtx = null;
 
-export let lastX_scratch = null;
-export let lastY_scratch = null;
 
-// Index 외 공용 (e.g. about.html 등)
-export let bannerElement = null;
-export let bannerTop_initial = 0;
-export let bannerBottom_initial = 0;
 
 // About 페이지 전용
 export let coachesWrapperElement = null;
@@ -83,11 +83,11 @@ export function cacheIndexElements() {
         }
     }
 
-    const scratchArea = document.querySelector('#scratchArea');
+    const scratchArea = document.querySelector('.scratchArea');
     if (scratchArea) {
         scratchAreaContainer = scratchArea;
 
-        const canvas = scratchArea.querySelector('canvas');
+        const canvas = scratchArea.querySelector('#drawingCanvas');
         const filter = scratchArea.querySelector('.scratchFilter');
         if (canvas) {
             scratchCanvasElement = canvas;
