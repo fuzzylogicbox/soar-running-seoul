@@ -31,6 +31,6 @@ export function initializeClock () {
         // 1초마다 시계 업데이트
         setInterval(updateClock, 1000);
 
-         console.log('시계 작동'); // 디버그
+        // console.log('시계 작동'); // 디버그
     }
 }
