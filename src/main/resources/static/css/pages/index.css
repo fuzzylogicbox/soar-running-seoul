@@ -1,0 +1,157 @@
+/* sectionvideo  */
+.videoWrapper {
+    position: relative;
+}
+
+.videoWrapper>h2 {
+    mix-blend-mode: difference;
+}
+/* ------------------------------------------ */
+
+
+/* sectionHero */
+.heroWrapper {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.heroWrapper>.heroImage {
+    width: 100%;
+}
+
+.heroWrapper>.heroFilter {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.heroWrapper>.heroFilter::after {
+    content: '';
+    display: block;
+    padding-bottom: 200px;
+    background-color: var(--black);
+}
+/* ------------------------------------------ */
+
+
+/* sectionAbout */
+.aboutWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+    margin: 6rem auto;
+}
+
+.aboutWrapper>div {
+    display: flex;
+}
+
+.aboutWrapper>.textBox {
+    flex-direction: column;
+    padding: 0 1rem;
+    color: var(--gray);
+    font-size: 15px;
+}
+
+.aboutWrapper>.textBox>.anchorBox.more {
+    margin-top: .8rem;
+    margin-right: 1rem;
+    text-align: end;
+    opacity: .5;
+    font-style: italic;
+}
+
+.aboutWrapper>.picBox {
+    align-items: center;
+}
+
+.aboutWrapper>.picBox.row>div {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.aboutWrapper>.picBox.row>div:nth-of-type(2)>img {
+    max-width: 74.5%;
+}
+
+.aboutWrapper>.picBox.flexEnd {
+    justify-content: flex-end;
+}
+
+.aboutWrapper>.picBox.flexEnd>div {
+    width: 50%;
+}
+
+.aboutWrapper>.picBox.wide>div {
+    width: 100%;
+}
+
+.aboutWrapper>.picBox.wide>div>img {
+    max-height: 1070px;
+    object-fit: cover;
+    object-position: top;
+}
+/* ------------------------------------------ */
+
+/* sectionScratch */
+.scratchWrapper {
+    margin: 0 1rem;
+    padding: 4rem 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.scratchWrapper>.scratchArea {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.scratchWrapper>.scratchArea>#drawingCanvas {
+    width: 100%;
+}
+
+.scratchWrapper>.scratchArea>.scratchFilter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99;
+    pointer-events: none;
+}
+
+.scratchWrapper>.copyWrightBox {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+.scratchWrapper>.copyWrightBox>.copyWright {
+    width: 40%;
+    max-width: 700px;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 1rem;
+}
+
+.scratchWrapper>.copyWrightBox>.copyWright>p {
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-family: inherit;
+}
+
+.scratchWrapper>.copyWrightBox>.copyWright>p:first-of-type {
+    margin-left: 3em;
+}
+
+.scratchWrapper>.anchorBox {
+    margin-top: 2rem;
+    margin-right: 3rem;
+    display: flex;
+    justify-content: end;
+}
+/* ------------------------------------------ */
+

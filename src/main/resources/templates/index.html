@@ -1,8 +1,12 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" th:replace="~{layout :: layout(~{::title}, ~{::body})}">
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{layout :: layout(~{::title}, ~{::body}, ~{::pageCss}, ~{::pageScript})}">
 <head>
     <title>SOAR running x Seoul</title>
+    <th:block th:fragment="pageCss">
+        <link rel="stylesheet" th:href="@{/css/pages/index.css}" />
+    </th:block>
 </head>
+
 <body>
     <section id="sectionVideo">
         <div class="videoWrapper">
@@ -99,5 +103,10 @@
             </div>
         </div>
     </section>
+
+    <!--  JS  -->
+    <th:block th:fragment="pageScript">
+        <script type="module" th:src="@{/js/pages/index/index.js}"></script>
+    </th:block>
 </body>
 </html>

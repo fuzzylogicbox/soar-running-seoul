@@ -1,26 +1,5 @@
 window.addEventListener('load', function () {
 
-  // --- lenis 라이브러리 초기화 ---
-  const lenis = new Lenis({
-  duration: 2, // 스크롤 애니메이션 지속 시간 (초)
-  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // 기본 이징 함수
-  direction: 'vertical',
-  gestureDirection: 'vertical',
-  smooth: true,
-  mouseMultiplier: 0.5, // 마우스 휠 스크롤 속도 배율 (원한다면 조정)
-  smoothTouch: false, // 터치 기기에서 부드러움 활성화 여부 (true 시 touchmove 이벤트 방해 가능성)
-  touchMultiplier: 2, // 터치 스크롤 속도 배율 (원한다면 조정)
-  infinite: false,
-  });
-
-  // requestAnimationFrame을 사용하여 Lenis 업데이트 (부드러운 스크롤 핵심)
-  // 브라우저의 애니메이션 프레임마다 Lenis가 스크롤 위치를 계산하고 업데이트하도록 합니다.
-  function raf(time) {
-  lenis.raf(time);
-  requestAnimationFrame(raf);
-  }
-  requestAnimationFrame(raf); // 애니메이션 루프 시작
-
 
   // --- 요소 캐싱 ---
   const menuBtnElement = document.querySelector('.menuBtn');
