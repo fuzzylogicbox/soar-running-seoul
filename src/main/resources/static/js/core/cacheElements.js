@@ -44,7 +44,7 @@ export function cacheCommonElements() {
         headerElement = header;
     }
 
-    const clock = document.querySelector('.clock');
+    const clock = document.querySelector('#clock');
     if (clock) {
         clockElement = clock;
     }
