@@ -1,1 +1,57 @@
-/* footer.css */
+.footerWrapper {
+    margin-top: 10rem;
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid var(--border-color);
+}
+
+.footerWrapper>.footerContent {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footerWrapper>.footerContent>div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+    gap: 5rem;
+    padding: 3rem 1rem 1rem;
+    border-right: 1px solid var(--border-color);
+}
+
+.footerWrapper>.footerContent>div.footerCopyright {
+    border-right: none;
+}
+
+.footerWrapper>.footerContent>div>ul>li {
+    margin-bottom: 1rem;
+}
+
+.footerWrapper>.footerBottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.footerWrapper>.footerBottom>.bottomLogo {
+    min-width: 200px;
+}
+
+#adminLink {
+    font-size: .85rem;
+    color: var(--gray);
+}
+
+#copyright {
+    font-size: .85rem;
+    color: var(--gray);
+    text-align: end;
+}
+
+#clock {
+    text-align: center;
+    color: var(--secondary);
+}

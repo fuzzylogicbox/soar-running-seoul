@@ -1,3 +1,34 @@
 <footer th:fragment="footer">
-    <div>footer</div>
+     <div class="footerWrapper">
+        <div class="footerContent">
+            <div class="footerSitemap">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/qna">Q&A</a></li>
+                </ul>
+                <a id="adminLink" href="/admin">Admin</a>
+            </div>
+            <div class="footerPolicy">
+                <ul>
+                    <li><a href="/privacyPolicy">Privacy Policy</a></li>
+                    <li><a href="/cookiePolicy">Cookie Policy</a></li>
+                </ul>
+                <p id="clock"></p>
+            </div>
+            <div class="footerCopyright">
+                <ul>
+                    <li>Made By fuzzylogicbox&#40;Gunwoo Park&#41; for SOAR Running x Seoul</li>
+                    <li><a href="mailto:fuzzylogicbox@gmail.com">fuzzylogicbox@gmail.com</a></li>
+                    <li><a href="#" target="_blank">Github</a></li>
+                </ul>
+                <p id="copyright">&copy;2025 fuzzylogicbox. All Rights Reserved.</p>
+            </div>
+        </div>
+        <div class="footerBottom">
+            <div class="bottomLogo">
+                <img th:src="@{/images/logo.svg}" src="/images/logo.svg" alt="logo">
+            </div>
+        </div>
+    </div>
 </footer>
