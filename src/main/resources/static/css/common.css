@@ -1,0 +1,110 @@
+:root {
+    --black: #000000;
+    --white: #FFFFFF;
+    --gray: #C9C9C9;
+    --base: #1A171A;
+    --primary: #FF6B00;
+    --secondary: #FF8C42;
+    --border-color: #FFFFFF1A;
+    --font-sans-serif: "Roboto", "Noto Sans KR", Arial, sans-serif;
+    --font-monospace: "Roboto Mono", monospace;
+}
+
+body {
+    background-color: var(--base);
+    color: var(--white);
+    font-size: 15px;
+    font-family: var(--font-sans-serif);
+}
+
+main {
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 6rem;
+    font-weight: 400;
+    color: var(--white);
+}
+
+section > h3 {
+    margin: 6rem 1rem;
+    font-size: 3rem;
+    font-weight: 100;
+    font-style: italic;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="date"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid var(--gray);
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.btn,
+button[type="submit"],
+input[type="submit"],
+input[type="button"] {
+    display: block;
+    background-color: var(--primary);
+    color: var(--black);
+    text-align: center;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: var(--secondary);
+}
+
+.btn-lg {
+    width: 200px;
+    border: none;
+    padding: .8rem;
+    border-radius: .5rem;
+}
+
+.btn-sm {
+    padding: 5px 18px;
+    border-radius: 3px;
+}
+
+.mono {
+    font-family: var(--font-monospace);
+}
+
+.movedRight {
+    margin-right: 10%;
+}
+
+.movedLeft {
+    margin-left: 15%;
+}
+
+/* sectionBelt */
+.beltWrapper {
+    margin: 6rem auto;
+    overflow: hidden;
+}
+.beltWrapper > .tapeBelt {
+    width: 500vw;
+    height: 80px;
+    background-image: url('../images/tapeBelt.png');
+    background-repeat: repeat;
+}
+/* ------------------------------------------ */

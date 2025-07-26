@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" th:fragment="layout(title, body)">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:fragment="layout(title, body, pageCss, pageScript)">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,9 +13,13 @@
             href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
             rel="stylesheet">
 
-    <!--Stylesheet-->
+    <!-- Init Stylesheet -->
     <link rel="stylesheet" th:href="@{/css/reset.css}" />
-    <link rel="stylesheet" th:href="@{/css/main.css}" />
+    <link rel="stylesheet" th:href="@{/css/common.css}" />
+    <link rel="stylesheet" th:href="@{/css/header.css}" />
+    <link rel="stylesheet" th:href="@{/css/footer.css}" />
+    <!-- Page CSS -->
+    <th:block th:replace="${pageCss}"/>
 </head>
 <body>
 <div th:replace="fragments/header :: header"></div>
@@ -28,7 +32,11 @@
 <!-- Lenis 라이브러리 CDN -->
 <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@latest/bundled/lenis.min.js"></script>
 
-<!-- main JS -->
-<script th:src="@{/js/main.js}"></script>
+<!-- Init JS -->
+<script type="module" th:src="@{/js/common/init.js}"></script>
+
+<!-- Page JS -->
+<th:block th:replace="${pageScript}"/>
+<!--<script th:src="@{/js/main.js}"></script>-->
 </body>
 </html>
