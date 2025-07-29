@@ -13,7 +13,7 @@ export function handleHeaderScroll(currentScrollY, currentVelocity) {
         headerElement.classList.remove('hidden');
     } else if (currentVelocity !== 0) {
         if(currentVelocity > 0) {
-            headerElement.style.top =`${headerHeight}px`;
+            headerElement.style.top =`-${headerHeight}px`;
             headerElement.classList.add('hidden');
         } else {
             headerElement.style.top = '0px';

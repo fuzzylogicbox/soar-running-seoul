@@ -54,7 +54,7 @@ export function cacheCommonElements() {
         bannerElement = banner;
         const rect = banner.getBoundingClientRect();
         bannerTop_initial = rect.top + window.scrollY;
-        bannerBottom_initial = rect.bottom + window.scrollY();
+        bannerBottom_initial = rect.bottom + window.scrollY;
     }
 
     const belt = document.querySelector('#sectionBelt');
@@ -101,14 +101,14 @@ export function cacheIndexElements() {
 }
 
 export function cacheAboutElements() {
-    const coaches = document.querySelector('#coachesWrapper');
+    const coaches = document.querySelector('.coachesWrapper');
     if (coaches) {
         coachesWrapperElement = coaches;
         const rect = coaches.getBoundingClientRect();
         coachesTop_initial = rect.top + window.scrollY;
         coachesBottom_initial = rect.bottom + window.scrollY;
 
-        const images = coaches.querySelectorAll('.coachImage');
+        const images = coaches.querySelectorAll('.coachImg');
         if (images) {
             coachImages = images;
         }
