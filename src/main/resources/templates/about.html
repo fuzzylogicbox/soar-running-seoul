@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{layout :: layout(~{::title}, ~{::body}, ~{::pageCss}, ~{::pageScript})}">
+<head>
+    <title>SOAR running x Seoul</title>
+    <th:block th:fragment="pageCss">
+        <link rel="stylesheet" th:href="@{/css/pages/about.css}" />
+    </th:block>
+</head>
+
+<body>
+    <section id="sectionBanner">
+        <div class="bannerWrapper"
+            style="background-image:url('./images/img_1920_2.jpg'); background-position: top center;">
+            <h2 class="mono">About</h2>
+        </div>
+    </section>
+    <section id="sectionAbout">
+        <h3>/ Stories</h3>
+        <div class="aboutWrapper">
+            <div class="textBox">
+                <p>In Seoul, where ultramodern skyscrapers loom over ancient palaces, running has evolved into a
+                    cultural phenomenon. Running clubs, stylish apparel brands, and varied routes mirror the city's
+                    dynamic energy.</p>
+            </div>
+            <div class="picBox row">
+                <div><img th:src="@{/images/img_960x1440_2.jpg}"></div>
+                <div><img th:src="@{/images/img_720x1080_2.jpg}"></div>
+            </div>
+            <div class="picBox movedRight flexEnd">
+                <div><img th:src="@{/images/img_900x600_2.jpg}"></div>
+            </div>
+            <div class="textBox">
+                <p>The Han River, a natural artery, offers runners views of skyscrapers, parks, and mountains,
+                    embodying Seoul's harmony of old and new. This blend of tradition and modernity resonates with
+                    the city's runners and the three that took to the streets in SOAR.</p>
+            </div>
+            <div class="picBox wide">
+                <div><img th:src="@{/images/img_1920_1.jpg}"></div>
+            </div>
+        </div>
+    </section>
+    <section id="sectionCoaches">
+        <h3>/ Coaches</h3>
+        <div class="coachesWrapper">
+            <div class="coachesEl">
+                <div class="picBox">
+                    <img class="coachImg" th:src="@{/images/coach_1.jpg}">
+                </div>
+                <div class="textBox">
+                    <img class="icon_sml" th:src="@{/images/icon_sml.png}">
+                    <p class="fulltext">
+                        A furniture maker, found solace in running amid Seoul’s urban sprawl.
+                        <br><br>
+                        Raised in nature, he now escapes the city's relentless pace through his runs.
+                    </p>
+                    <p class="name">Kim Bi</p>
+                </div>
+            </div>
+            <div class="coachesEl rowReverse movedRight">
+                <div class="picBox">
+                    <img class="coachImg" th:src="@{/images/coach_2.jpg}">
+                </div>
+                <div class="textBox">
+                    <img class="icon_sml" th:src="@{/images/icon_sml.png}">
+                    <p class="fulltext">A semiconductor engineer, co founded ORC Seoul running crew, merging
+                        exercise
+                        with exploration.<br><br> It's a shared adventure with his wife.</p>
+                    <p class="name">Gibaek Kim</p>
+                </div>
+            </div>
+            <div class="coachesEl movedLeft">
+                <div class="coachImg" class="picBox">
+                    <img th:src="@{/images/coach_3.jpg}">
+                </div>
+                <div class="textBox">
+                    <img class="icon_sml" th:src="@{/images/icon_sml.png"}>
+                    <p class="fulltext">Another ORC member, energises her runs with techno beats that sync with
+                        Seoul’s
+                        urban pulse.<br><br> Post run, she enjoys the vibrant café culture.</p>
+                    <p class="name">Jieun Lee</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="sectionBelt">
+        <div class="beltWrapper">
+            <div class="tapeBelt"></div>
+        </div>
+    </section>
+    <section id="sectionInformation">
+        <h3>/ Infomation</h3>
+        <div class="informationWrapper">
+            <div class="mapBox">
+                <img th:src="@{/images/map--test--white--003_1080x.png}">
+            </div>
+            <div class="information">
+                <div><b>Title :</b> <p>SOAR x Seoul Night Run</p></div>
+                <div><b>Outline :</b> <p>Icebreaker & Warm-up - Night Run&#40;Approx. 5 km&#41; - Cool-down & Closing<br/>
+                <i style="color: var(--gray);">* Replaced with an indoor program during winter&#40;December - February&#41; and in case of rain</i></p></div>
+                <div><b>Date :</b> <p>Every Wednesday at 7 PM</p></div>
+                <div><b>Location :</b> <p>SOAR Running Seoul Flagship Store</p></div>
+                <div><b>Participants :</b> <p>Everyone &#40;Beginners Welcome&#41;</p></div>
+                <div><b>What to Bring :</b> <p>Comfortable athletic wear &#40;Running wear and shoes recommended&#41;</p></div>
+                <div><b>Duration :</b> <p>About 2 hours</p></div>
+                <div class="btnBox">
+                    <div class="applyBtn btn btn-lg">Apply</div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>

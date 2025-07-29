@@ -1,0 +1,142 @@
+
+/* sectionAbout */
+.aboutWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+    margin: 6rem auto;
+}
+
+.aboutWrapper>div {
+    display: flex;
+}
+
+.aboutWrapper>.textBox {
+    flex-direction: column;
+    padding: 0 1rem;
+    color: var(--gray);
+    font-size: 15px;
+}
+
+.aboutWrapper>.textBox>.anchorBox.more {
+    margin-top: .8rem;
+    margin-right: 1rem;
+    text-align: end;
+    opacity: .5;
+    font-style: italic;
+}
+
+.aboutWrapper>.picBox {
+    align-items: center;
+}
+
+.aboutWrapper>.picBox.row>div {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.aboutWrapper>.picBox.row>div:nth-of-type(2)>img {
+    max-width: 74.5%;
+}
+
+.aboutWrapper>.picBox.flexEnd {
+    justify-content: flex-end;
+}
+
+.aboutWrapper>.picBox.flexEnd>div {
+    width: 50%;
+}
+
+.aboutWrapper>.picBox.wide>div {
+    width: 100%;
+}
+
+.aboutWrapper>.picBox.wide>div>img {
+    max-height: 1070px;
+    object-fit: cover;
+    object-position: top;
+}
+/* ------------------------------------------ */
+
+/* sectionCoaches  */
+.coachesWrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 12.5rem;
+    padding: 0 1.3rem;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1728px;
+}
+
+.coachesWrapper>.coachesEl {
+    display: flex;
+    align-items: center;
+}
+
+.coachesWrapper>.coachesEl>.picBox {
+    width: 41.67%;
+}
+
+.coachesWrapper>.coachesEl>.textBox {
+    padding-left: 3.5rem;
+    width: calc(100% - 41.67%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    row-gap: 1.75rem;
+}
+
+.coachesWrapper>.coachesEl>.textBox>.icon_sml {
+    width: 30px;
+    height: 30px;
+}
+
+.coachesWrapper>.coachesEl>.textBox>.fulltext,
+.coachesWrapper>.coachesEl>.textBox>.name {
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    max-width: 450px;
+}
+
+.coachesWrapper>.coachesEl>.textBox>.name {
+    opacity: .5;
+}
+
+.coachesWrapper>.coachesEl.rowReverse {
+    flex-direction: row-reverse;
+}
+/* ------------------------------------------ */
+
+/* --- information --- */
+.informationWrapper {
+    display: flex;
+    align-items: center;
+}
+.informationWrapper > .mapBox {
+    flex: 1;
+}
+.informationWrapper > .information {
+    flex: 1;
+    padding-left: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.informationWrapper > .information > div{
+    display: flex;
+    gap: 1rem;
+    max-width: 760px;
+}
+.informationWrapper > .information > div > b,
+.informationWrapper > .information > div > p {
+    display: inline-block;
+    min-width: 120px;
+    font-size: 1.2rem;
+}
+.informationWrapper > .information > div.btnBox {
+    margin-top: 2rem;
+    justify-content: end;
+}
