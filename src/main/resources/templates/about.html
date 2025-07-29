@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" th:replace="~{layout :: layout(~{::title}, ~{::body}, ~{::pageCss}, ~{::pageScript})}">
 <head>
-    <title>SOAR running x Seoul</title>
+    <title>SOAR running x Seoul - About</title>
     <th:block th:fragment="pageCss">
         <link rel="stylesheet" th:href="@{/css/pages/about.css}" />
     </th:block>
@@ -10,7 +10,7 @@
 <body>
     <section id="sectionBanner">
         <div class="bannerWrapper"
-            style="background-image:url('./images/img_1920_2.jpg'); background-position: top center;">
+            th:style="|background-image:url('@{/images/img_1920_2.jpg}'); background-position: top center;|">
             <h2 class="mono">About</h2>
         </div>
     </section>
@@ -69,11 +69,11 @@
                 </div>
             </div>
             <div class="coachesEl movedLeft">
-                <div class="coachImg" class="picBox">
-                    <img th:src="@{/images/coach_3.jpg}">
+                <div class="picBox">
+                    <img class="coachImg "th:src="@{/images/coach_3.jpg}">
                 </div>
                 <div class="textBox">
-                    <img class="icon_sml" th:src="@{/images/icon_sml.png"}>
+                    <img class="icon_sml" th:src="@{/images/icon_sml.png}"}>
                     <p class="fulltext">Another ORC member, energises her runs with techno beats that sync with
                         Seoul’s
                         urban pulse.<br><br> Post run, she enjoys the vibrant café culture.</p>
@@ -108,4 +108,9 @@
             </div>
         </div>
     </section>
+
+    <!--  JS  -->
+    <th:block th:fragment="pageScript">
+        <script type="module" th:src="@{/js/pages/index/index.js}"></script>
+    </th:block>
 </body>
