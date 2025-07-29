@@ -18,6 +18,7 @@
     <link rel="stylesheet" th:href="@{/css/common.css}" />
     <link rel="stylesheet" th:href="@{/css/header.css}" />
     <link rel="stylesheet" th:href="@{/css/footer.css}" />
+    <link rel="stylesheet" th:href="@{/css/modal.css}" />
     <!-- Page CSS -->
     <th:block th:replace="${pageCss}"/>
 </head>
@@ -27,7 +28,7 @@
     <div th:replace="${body}"></div>
 </main>
 <div th:replace="fragments/footer :: footer"></div>
-
+<div th:replace="fragments/apply :: apply"></div>
 
 <!-- Lenis 라이브러리 CDN -->
 <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@latest/bundled/lenis.min.js"></script>
