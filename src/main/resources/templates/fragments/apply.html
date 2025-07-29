@@ -1,0 +1,53 @@
+<div th:fragment="apply" class="modalOverlay" id="applyModal">
+    <div class="modalContent">
+        <button class="closeModalBtn">&times;</button>
+        <div class="modalBody">
+            <div class="modalImage">
+                <img th:src="@{/images/img_720x1080_1.jpg}">
+            </div>
+            <div class="modalForm">
+                <h3><em id="event_date_display">2025-01-01</em><br>SOAR x Seoul Night Run</h3>
+                <form id="applyForm">
+                    <input type="hidden" id="event_date_value" name="event_date" value="2025-01-01">
+                    <div>
+                        <label>Name</label>
+                        <input type="text" required>
+                    </div>
+                    <fieldset>
+                        <legend>Gender</legend>
+                        <div>
+                            <input type="radio" id="gender_male" name="gender" value="male" checked>
+                            <label for="gender_male">Male</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="gender_female" name="gender" value="female">
+                            <label for="gender_female">Female</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="gender_nonbinary" name="gender" value="nonbinary">
+                            <label for="gender_nonbinary">Non-binary</label>
+                        </div>
+                    </fieldset>
+                    <div>
+                        <label for="birth">Brith</label>
+                        <input type="date" id="birth" name="birth" required>
+                    </div>
+                    <div>
+                        <label>Tel.</label>
+                        <input type="tel" id="tel" name="tel" required>
+                    </div>
+                    <div>
+                        <label>e-mail</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="privacyAgree">
+                        <input type="checkbox" id="privacy_agree" name="privacy_agree" value="true" required>
+                        <label>I agree to the <a href="/privacyPolicy" target="_blank">Privacy Policy</a>.
+                            (Required)</label>
+                    </div>
+                    <button type="submit" class="submitBtn btn btn-lg">Apply</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
