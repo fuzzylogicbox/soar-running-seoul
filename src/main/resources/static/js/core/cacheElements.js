@@ -6,6 +6,9 @@ export let beltElement = null;
 export let tapeBeltElement = null;
 export let beltTop_initial = 0;
 
+export let applyModalElement = null;
+export let applyBtns = null;
+
 // Index 외 공용 (e.g. about.html 등)
 export let bannerElement = null;
 export let bannerTop_initial = 0;
@@ -47,6 +50,16 @@ export function cacheCommonElements() {
     const clock = document.querySelector('#clock');
     if (clock) {
         clockElement = clock;
+    }
+
+    const applyBtnsAll = document.querySelectorAll('.applyBtn');
+    if(applyBtnsAll.length > 0) {
+        applyBtns = applyBtnsAll;
+    }
+
+    const apply = document.getElementById('applyModal');
+    if (apply) {
+        applyModalElement= apply;
     }
 
     const banner = document.querySelector('#sectionBanner');
